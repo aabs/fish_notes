@@ -5,7 +5,7 @@
     <img alt="License: GPL3" src="https://img.shields.io/badge/License-GPL3-yellow.svg" />
   </a>
   <a href="https://twitter.com/aabs" target="_blank">
-    <img alt="Twitter: aabs" src="https://img.shields.io/twitter/follow/aabs.svg?style=social" />
+          <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/aabs?label=Follow&style=social">
   </a>
 </p>
 
