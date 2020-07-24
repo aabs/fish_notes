@@ -4,13 +4,13 @@ set -q fd2_notes_default_insert_point || set -U fd2_notes_default_insert_point $
 
 functions -q define_subcommand_nonevented || error "this plugin depends on aabs/fish_subcmd"
 
-# bind \cn search_notes_fuzzy
+bind \cn __fd2_n2_find
 
-# set -l name (basename (status -f) .fish){_uninstall}
+set -l name (basename (status -f) .fish){_uninstall}
 
-# function $name --on-event $name
-#     bind --erase \co
-# end
+function $name --on-event $name
+    bind --erase \cn
+end
 
 fd2_define_command n2 "A simple plugin for managing a large hierarchy of textual notes"
 
@@ -26,3 +26,6 @@ fd2_define_subcommand n2 pcreate __fd2_n2_create_project_note "create a new note
 fd2_define_subcommand n2 save __fd2_n2_save                   "save any new or modified notes locally (to git) " 
 fd2_define_subcommand n2 sync __fd2_n2_sync                   "save notes and push to origin                   " 
 fd2_define_subcommand n2 move __fd2_n2_move                   "rename or move the note                         " 
+
+
+alias fen='__fd2_n2_search_notes_fuzzy'
