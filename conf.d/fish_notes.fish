@@ -22,7 +22,7 @@ fd2_define_subcommand n2 edit __fd2_n2_edit                   "edit the note ide
 fd2_define_subcommand n2 find __fd2_n2_find                   "find the note by searching file names           " 
 fd2_define_subcommand n2 search __fd2_n2_search_and_edit               "perform a full text search for patterns         " 
 fd2_define_subcommand n2 create __fd2_n2_create               "create a new note                               " 
-fd2_define_subcommand n2 pcreate __fd2_n2_create_project_note "create a new note within a project area         " 
+fd2_define_subcommand n2 pcreate __fd2_n2_pcreate "create a new note within a project area         " 
 fd2_define_subcommand n2 save __fd2_n2_save                   "save any new or modified notes locally (to git) " 
 fd2_define_subcommand n2 sync __fd2_n2_sync                   "save notes and push to origin                   " 
 fd2_define_subcommand n2 move __fd2_n2_move                   "rename or move the note                         " 
