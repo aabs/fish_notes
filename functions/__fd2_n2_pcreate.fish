@@ -7,6 +7,8 @@ function __fd2_n2_pcreate -d "create a new text note within a project area"
     touch $p
     __fd2_n2_edit $p
     debug wrote "$p" to notes
+  else
+    warn "insert point was not set!"
   end
 end
 
