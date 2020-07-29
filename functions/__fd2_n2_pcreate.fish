@@ -1,6 +1,19 @@
 function __fd2_n2_pcreate -d "create a new text note within a project area"
+  set -l title ''
+
+  getopts argv | while read -l key value
+      switch key
+          case t title
+              set title value
+      end
+  end
+
+  if test -z $title
+    error 'title must be set (use the -t option)' >&2
+    return 1
+  end
+  
   if set -q fd2_notes_default_insert_point
-    set -l title $argv
     set -l escaped_file_name (fd2_to_slug "$title")
     set d (date --iso-8601)
     set p "$fd2_notes_default_insert_point/$d-$escaped_file_name.md"
