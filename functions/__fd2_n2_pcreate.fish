@@ -1,7 +1,7 @@
 function __fd2_n2_pcreate -d "create a new text note within a project area"
   if set -q fd2_notes_default_insert_point
     set -l title $argv
-    set -l escaped_file_name (__fd2_to_slug "$title")
+    set -l escaped_file_name (fd2_to_slug "$title")
     set d (date --iso-8601)
     set p "$fd2_notes_default_insert_point/$d-$escaped_file_name.md"
     touch $p
