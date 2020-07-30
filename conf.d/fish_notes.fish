@@ -2,7 +2,7 @@ set -q XDG_CONFIG_HOME || set -x XDG_CONFIG_HOME $HOME/.config
 set -q fd2_notes_home || set -U fd2_notes_home ~/notes
 set -q fd2_notes_default_insert_point || set -U fd2_notes_default_insert_point $FD_NOTES_HOME
 
-functions -q fd2_define_subcommand -p || -c error -f "-dn2: this plugin depends on aabs/fish_subcmd"
+functions -q fd2_define_subcommand || error "n2: this plugin depends on aabs/fish_subcmd"
 
 bind \cn __fd2_n2_find
 
