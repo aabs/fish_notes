@@ -26,6 +26,7 @@ fd2_define_subcommand -p n2 -c pcreate -f __fd2_n2_pcreate        -d "create a n
 fd2_define_subcommand -p n2 -c save -f __fd2_n2_save              -d "save any new or modified notes locally (to git) " 
 fd2_define_subcommand -p n2 -c sync -f __fd2_n2_sync              -d "save notes and push to origin                   " 
 fd2_define_subcommand -p n2 -c move -f __fd2_n2_move              -d "rename or move the note                         " 
+fd2_define_subcommand -p n2 -c dip -f  __fd2_n2_select_default_insertion_point -d "change default insertion point     " 
 
-
+functions -e fen
 alias fen='__fd2_n2_search_notes_fuzzy'
