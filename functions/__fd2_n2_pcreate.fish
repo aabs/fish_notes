@@ -1,10 +1,11 @@
-function __fd2_n2_pcreate -d "create a new text note within a project area"
-  set -l title ''
+# Defined in /tmp/fish.AKVfgu/__fd2_n2_pcreate.fish @ line 2
+function __fd2_n2_pcreate --description 'create a new text note within a project area'
+	set -l title ''
 
-  getopts argv | while read -l key value
-      switch key
+  getopts $argv | while read -l key value
+      switch $key
           case t title
-              set title value
+              set title $value
       end
   end
 
@@ -14,6 +15,7 @@ function __fd2_n2_pcreate -d "create a new text note within a project area"
   end
   
   if set -q fd2_notes_default_insert_point
+    debug "title: $title"
     set -l escaped_file_name (fd2_to_slug "$title")
     set d (date --iso-8601)
     set p "$fd2_notes_default_insert_point/$d-$escaped_file_name.md"
@@ -24,6 +26,3 @@ function __fd2_n2_pcreate -d "create a new text note within a project area"
     warn "insert point was not set!"
   end
 end
-
-
-# vim: set et foldlevelstart=-1 foldmethod=syntax sw=2 ts=2 tw=0 : 
