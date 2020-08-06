@@ -6,16 +6,15 @@ f$__fd2_p2_current_snunction __fd2_n2_pcreate --description 'create a new text n
     return $status
   end
 
-  set title ''
-  set tags ''
-
-  set title (get -p "what is the title?\n>")
+  fd2_get "What is the title?"
+  set -l title $fd2_input
   if test -z $title
     error "Can't proceed without a title! Aborting" >&2
     return 1
   end
 
-  set tags (get -p "what [optional] tags describe this note?\n[]>")
+  fd2_get  "what [optional] tags describe this note?"
+  set -l tags $fd2_input
   if set -q __fd2_p2_current_sn
     set -p tags $__fd2_p2_current_sn
   end
