@@ -1,5 +1,5 @@
 # Defined in /tmp/fish.4BaA3y/__fd2_n2_pcreate.fish @ line 2
-f$__fd2_p2_current_snunction __fd2_n2_pcreate --description 'create a new text note within a project area'
+function __fd2_n2_pcreate --description 'create a new text note within a project area'
   if not set -q fd2_notes_default_insert_point
     error "no default insertion point set.  falling back to regular create." >&2
     __fd2_n2_create
