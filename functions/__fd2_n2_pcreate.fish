@@ -6,18 +6,18 @@ function __fd2_n2_pcreate --description 'create a new text note within a project
     return $status
   end
 
-  fd2_get "What is the title?"
-  set -l title $fd2_input
+	set -l title ''
+  set -l tags ''
+
+  echo "What is the title?"
+  set -l title (read)
   if test -z $title
     error "Can't proceed without a title! Aborting" >&2
     return 1
   end
 
-  fd2_get  "what [optional] tags describe this note?"
-  set -l tags $fd2_input
-  if set -q __fd2_p2_current_sn
-    set -p tags $__fd2_p2_current_sn
-  end
+  echo  "what [optional] tags describe this note?"
+  set -l tags (read)
 
   set escaped_file_name (fd2_to_slug "$title")
   set d (date --iso-8601)
