@@ -1,4 +1,4 @@
-function __fd2_n2_select_default_insertion_point
+function n2_select_default_insertion_point
   set -U fd2_notes_default_insert_point (find $fd2_notes_home -type d -not -path '*.git*' | fzf)
 end
 
