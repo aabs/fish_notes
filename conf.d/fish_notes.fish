@@ -12,21 +12,21 @@ function $name --on-event $name
     bind --erase \cn
 end
 
-fd2_define_command -p n2 -d "A simple plugin for managing a large hierarchy of textual notes"
+complete -f -c n2_create -s t -r -d 'title of the note'
+complete -f -c n2_create -s g -d 'tags for the note'
 
-fd2_define_subcommand -p n2 -c home -f __fd2_n2_home              -d "go to the root of the notes collection          " 
-fd2_define_subcommand -p n2 -c info -f __fd2_n2_info              -d "display config details of note plugin           " 
-fd2_define_subcommand -p n2 -c ls -f __fd2_n2_ls                  -d "list all notes (maybe long)                     " 
-fd2_define_subcommand -p n2 -c tasks -f __fd2_n2_tasks            -d "                                                " 
-fd2_define_subcommand -p n2 -c edit -f __fd2_n2_edit              -d "edit the note identified by the path            " 
-fd2_define_subcommand -p n2 -c find -f __fd2_n2_find              -d "find the note by searching file names           " 
-fd2_define_subcommand -p n2 -c search -f __fd2_n2_search_and_edit -d "perform a full text search for patterns         " 
-fd2_define_subcommand -p n2 -c create -f __fd2_n2_create          -d "create a new note                               " 
-fd2_define_subcommand -p n2 -c pcreate -f __fd2_n2_pcreate        -d "create a new note within a project area         " 
-fd2_define_subcommand -p n2 -c save -f __fd2_n2_save              -d "save any new or modified notes locally (to git) " 
-fd2_define_subcommand -p n2 -c sync -f __fd2_n2_sync              -d "save notes and push to origin                   " 
-fd2_define_subcommand -p n2 -c move -f __fd2_n2_move              -d "rename or move the note                         " 
-fd2_define_subcommand -p n2 -c dip -f  __fd2_n2_select_default_insertion_point -d "change default insertion point     " 
+complete -f -c n2_pcreate -s t -r -d 'title of the note'
+complete -f -c n2_pcreate -s g -d 'tags for the note'
+
+complete -c n2_edit -s f -r -d 'path of the note'
+
+complete -f -c n2_find -s p -r -d 'search pattern'
+complete -f -c n2_search -s p -r -d 'search pattern'
+complete -f -c n2_search_and_edit -s p -r -d 'search pattern'
+complete -c n2_get_file_relative_path -s p -r -d 'path to note'
+
+complete -c n2_move -s f -r -d 'from basename'
+complete -c n2_move -s t -r -d 'to basename'
 
 functions -e fen
-alias fen='__fd2_n2_search_notes_fuzzy'
+alias fen='n2_fzf'
