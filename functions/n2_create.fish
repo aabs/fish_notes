@@ -11,14 +11,13 @@ function n2_create --description 'create a new text note'
   end
 
   if test -z $_flag_g
-    error "to basename must be set (use the -t option)" >&2
-    return 1
+    debug "tags not set" >&2
   else
     set tags $_flag_g
   end
   
   set escaped_file_name (fd2_to_slug $title)
-  set d (date --iso-8601)
+  set d (date +"%Y-%m-%d")
   set p "$fd2_notes_home/$d-$escaped_file_name.md"
   echo -e "# $title\n\n<!-- tags: $tags -->\n\n" > $p
   echo -e "\n\n<!-- vim: set et foldlevelstart=20 foldmethod=syntax sw=2 ts=2 tw=72 : -->" >> $p

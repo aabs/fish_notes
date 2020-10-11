@@ -5,6 +5,6 @@ function n2_find -d "file name search for <pattern>, opens selection in default 
     return 1
   end
 
-  fd2_select_from_find $fd2_notes_home $_flag_p
-  n2_edit $fd2_selected_file
+  fd2_select_from_find -r "$fd2_notes_home" -p "$_flag_p"
+  # n2_edit -f $fd2_selected_file
 end

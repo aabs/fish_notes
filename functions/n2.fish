@@ -58,7 +58,7 @@ function n2_help
   echo
   echo "n2 has various commands for creating and working with notes:"
   echo
-  echo "   create    Create a new note at the root of the notes folder" 
+  echo "   create    (-t 'title' -g 'tags') Create a new note at the root of the notes folder" 
   echo "   defip     Set the default insertion point for project notes" 
   echo "   edit      Open a file for editing" 
   echo "   find      Find a file by name" 
