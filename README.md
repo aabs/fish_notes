@@ -14,7 +14,7 @@
 ## Install
 
 ```sh
-fisher add aabs/fish_notes
+fisher install aabs/fish_notes
 ```
 
 ## Usage
